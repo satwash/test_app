@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Info</title>
+    <script>
+        function updateTime() {
+            document.getElementById("datetime").innerText = new Date().toLocaleString();
+        }
+        setInterval(updateTime, 1000);
+    </script>
+</head>
+<body>
+    <h1>Hello! This is test app</h1>
+    <p><strong>Container Name:</strong> <span id="container-name"></span></p>
+    <p><strong>Date & Time:</strong> <span id="datetime"></span></p>
+
+    <script>
+        fetch("/hostname")
+            .then(response => response.text())
+            .then(data => document.getElementById("container-name").innerText = data)
+            .catch(err => console.error("Error fetching hostname:", err));
+    </script>
+</body>
+</html>
