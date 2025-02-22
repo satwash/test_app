@@ -7,3 +7,5 @@ steps:
 
 images:
 - 'us-east1-docker.pkg.dev/fine-volt-451204-b9/art-repo/nginx-app:$SHORT_SHA'
+
+logsBucket: gs://logbucket1654160
