@@ -1,1 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-east1-docker.pkg.dev/fine-volt-451204-b9/art-repo/nginx-app:$SHORT_SHA', '.']
 
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-east1-docker.pkg.dev/fine-volt-451204-b9/art-repo/nginx-app:$SHORT_SHA']
+
+images:
+- 'us-east1-docker.pkg.dev/fine-volt-451204-b9/art-repo/nginx-app:$SHORT_SHA'
